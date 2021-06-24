@@ -6162,7 +6162,7 @@ hipsparseStatus_t hipsparseSpMV(hipsparseHandle_t           handle,
                                 void*                       externalBuffer);
 #endif
 
-/* Description: Compute the sparse matrix multiplication with a dense matrix */
+/* Description: Calculate the buffer size required for the sparse matrix multiplication with a dense matrix */
 #if(!defined(CUDART_VERSION) || CUDART_VERSION >= 10010)
 HIPSPARSE_EXPORT
 hipsparseStatus_t hipsparseSpMM_bufferSize(hipsparseHandle_t           handle,
@@ -6180,7 +6180,6 @@ hipsparseStatus_t hipsparseSpMM_bufferSize(hipsparseHandle_t           handle,
 
 #if(!defined(CUDART_VERSION) || CUDART_VERSION >= 11021)
 /* Description: Preprocess step of the sparse matrix multiplication with a dense matrix.
-   Note: The HCC implementation is doing nothing else than a bad argument check.
  */
 HIPSPARSE_EXPORT
 hipsparseStatus_t hipsparseSpMM_preprocess(hipsparseHandle_t           handle,
@@ -6197,6 +6196,7 @@ hipsparseStatus_t hipsparseSpMM_preprocess(hipsparseHandle_t           handle,
 #endif
 
 #if(!defined(CUDART_VERSION) || CUDART_VERSION >= 10010)
+/* Description: Compute the sparse matrix multiplication with a dense matrix */
 HIPSPARSE_EXPORT
 hipsparseStatus_t hipsparseSpMM(hipsparseHandle_t           handle,
                                 hipsparseOperation_t        opA,
